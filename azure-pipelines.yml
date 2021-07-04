@@ -8,13 +8,15 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  dotnetSdkVersion: '5.0.301'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '5.x'
+
 
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
+    packageType: 'sdk'
     version: '$(dotnetSdkVersion)'
 
 - task: Npm@1
